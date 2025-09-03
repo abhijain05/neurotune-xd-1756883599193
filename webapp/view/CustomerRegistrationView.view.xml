@@ -1,21 +1,75 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <mvc:View xmlns:mvc="sap.ui.core.mvc"
-  xmlns="sap.m"
-  xmlns:layout="sap.ui.layout"
-  xmlns:form="sap.ui.layout.form"
-  xmlns:core="sap.ui.core"
-  xmlns:richtexteditor="sap.ui.richtexteditor"
-  xmlns:viz="sap.viz.ui5"
-  controllerName="preview.app.controller.CustomerRegistrationView"
-  displayBlock="true">
-  <Page title="CustomerRegistrationView" enableScrolling="true">
+          xmlns="sap.m"
+          xmlns:layout="sap.ui.layout"
+          xmlns:form="sap.ui.layout.form"
+          xmlns:core="sap.ui.core"
+          controllerName="converted.customerregistrationview.controller.CustomerRegistrationView"
+          displayBlock="true"
+          xmlns:commons="sap.ui.commons">
+  <Page title="Customer Registration" enableScrolling="true">
     <content>
-      <Title id="title_qkprhznn" text="Customer Registration"/>
-      <form:SimpleForm id="formContainer">
+      <MessageStrip
+        text="This application demonstrates a customer registration form."
+        type="Information"
+        showIcon="true"
+        class="sapUiResponsiveMargin"/>
+
+      <form:SimpleForm
+        id="formContainer"
+        editable="true"
+        layout="ResponsiveGridLayout"
+        title="Customer Registration"
+        labelSpanXL="4"
+        labelSpanL="3"
+        labelSpanM="4"
+        labelSpanS="12"
+        adjustLabelSpan="false"
+        emptySpanXL="0"
+        emptySpanL="4"
+        emptySpanM="0"
+        emptySpanS="0"
+        columnsXL="2"
+        columnsL="1"
+        columnsM="1"
+        singleContainerFullSize="false">
         <form:content>
-          <!-- Empty SimpleForm content -->
+          <Label text="First Name" id="firstNameLabel"/>
+          <Input id="firstNameField" value="{/firstName}" tooltip="Enter first name"/>
+
+          <Label text="Last Name" id="lastNameLabel"/>
+          <Input id="lastNameField" value="{/lastName}" tooltip="Enter last name"/>
+
+          <Label text="Email" id="emailLabel"/>
+          <Input id="emailField" value="{/email}" type="Email" required="true" tooltip="Enter email address"/>
+
+          <Label text="Phone Number" id="phoneLabel"/>
+          <Input id="phoneField" value="{/phone}" type="Tel" tooltip="Enter phone number"/>
+
+          <Label text="Company Name" id="companyLabel"/>
+          <Input id="companyField" value="{/company}" tooltip="Enter company name"/>
+
+          <Label text="Job Title" id="jobTitleLabel"/>
+          <Input id="jobTitleField" value="{/jobTitle}" tooltip="Enter job title"/>
+
+          <Label text="Address" id="addressLabel"/>
+          <Input id="addressField" value="{/address}" tooltip="Enter address"/>
+
+          <Label text="Terms and Conditions" id="termsLabel"/>
+          <CheckBox id="termsCheckbox" selected="{/terms}" tooltip="Accept terms and conditions"/>
+
+          <Title/>
+          <Button id="submitButton" text="Submit" type="Emphasized" press="onSubmit" tooltip="Submit registration"/>
         </form:content>
       </form:SimpleForm>
+
+      <MessagePopover
+        id="messagePopoverBtn"
+        placement="Bottom"
+        showHandle="false"
+        showArrow="false"
+        items="{messages>/messages}"
+        activeTitlePress="handleMessageItemPress"
+        class="sapUiResponsiveMargin"/>
     </content>
   </Page>
 </mvc:View>

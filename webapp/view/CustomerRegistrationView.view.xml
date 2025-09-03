@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:layout="sap.ui.layout"
+  xmlns:form="sap.ui.layout.form"
+  xmlns:core="sap.ui.core"
+  xmlns:richtexteditor="sap.ui.richtexteditor"
+  xmlns:viz="sap.viz.ui5"
+  controllerName="preview.app.controller.CustomerRegistrationView"
+  displayBlock="true">
+  <Page title="CustomerRegistrationView" enableScrolling="true">
+    <content>
+      <Title id="title_qkprhznn" text="Customer Registration"/>
+      <form:SimpleForm id="formContainer">
+        <form:content>
+          <!-- Empty SimpleForm content -->
+        </form:content>
+      </form:SimpleForm>
+    </content>
+  </Page>
+</mvc:View>
